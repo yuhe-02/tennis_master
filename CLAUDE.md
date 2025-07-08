@@ -73,18 +73,38 @@ The application has a complete UI foundation with mock functionality. The analys
 
 - Frontend
   - 1.Dockerfileセットアップ
-    - status: TODO
+    - status: DONE
     - フロントエンドをコンテナ化して立ち上げるためにdockerfileを書いてください
 - backend
   - 1.Dockerfileセットアップ
-    - status: TODO
+    - status: DONE
     - バックエンドをコンテナ化して立ち上げるためにdockerfileを書いてください
     - バックエンドは、いったんPythonのFlask使う想定でお願いします。
+  - 2. とりあえずアップロードを
+    - status: DONE
+    - 本来は、S3にアップロードしてＤＢにレコード入れたいけどいったん最小構成にしてやる
+    - ＰＹＴＨＯＮにＶＩＤＥＯＳディレクトリを作成し、同じ名前のＶＩＤＥＯをそこに保管する。
+    - その動画を使用して後続の処理をやるようにしてください。
+  - 3. 動画の続きを作成する
+    - status: TODO
+    - 先ほどのアップロードした動画から、理想のフォームを作るように動画を再生成してほしいのだ。
+    - Runaway AI使ってやってください。
 - DB
   - 1.Dockerfileセットアップ
     - status: STOP
     - データベースをコンテナ化して立ち上げるためにdockerfileを書いてください
 - common
   - 1. docker-compose作成
-    - status: TODO
+    - status: DONE
     - これらすべてを立ち上げるためのコンポーズ書いて
+
+## 課題
+
+- 動画ファイルの取り扱い
+- DBの立ち上げ
+- モデルの処理をローカルでやらせる場合、サービスを分離する
+- どのサービスを使って動画の続きを作成するか
+- stable diffusionを使うというのと、やっぱり事前学習が必要そうなので学習させる
+- CUDA driverセットアップ
+  - 私の環境が、RYZENのためドライバ設定は、rocmで行う
+  - ubuntu22.04でコンテナを立ち上げる必要がある。

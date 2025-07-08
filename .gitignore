@@ -1,1 +1,6 @@
 venv
+.venv
+playground
+*.mp4
+*.MOV
+__pycache__
