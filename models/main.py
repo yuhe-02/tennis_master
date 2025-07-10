@@ -1,6 +1,6 @@
 import cv2
-from implement.model import BlazePoseModel
-from implement.video_output import FileVideoOutput
+from implement.model import PoseAngleExtractor
+from implement.video_output import CsvVideoOutput, FileVideoOutput
 from implement.video_processor import VideoProcessor
 from implement.video_source import LocalVideoSource
 
@@ -14,8 +14,10 @@ if __name__ == "__main__":
     )
     cap_test.release()
 
-    output = FileVideoOutput("output_blazepose.mp4", fps, size)
-    model = BlazePoseModel()
+    output = FileVideoOutput("output_poseangle.mp4", fps, size)
+    csv_output = CsvVideoOutput("output_poseangle.csv")
+    # model = BlazePoseModel()
+    model = PoseAngleExtractor()
 
-    processor = VideoProcessor(source, model, output)
+    processor = VideoProcessor(source, model, output, csv_output)
     processor.run()
